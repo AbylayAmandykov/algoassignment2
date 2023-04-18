@@ -15,22 +15,16 @@ public class MyArrayList<T> implements MyList {
         arr = newArr;
     }
 
-    public T getElement(int index) {
-        checkIndex(index);
-        return arr[index];
-    }
-
-    public int getSize() {
-        return size;
-    }
-
     @Override
     public int size() {
-        return 0;
+        return this.size;
     }
 
     @Override
     public boolean contains(Object o) {
+        for(T element : arr) {
+            if(element.equals(o)) return true;
+        }
         return false;
     }
 
@@ -41,11 +35,17 @@ public class MyArrayList<T> implements MyList {
         }
         arr[size++] = (T) item;
     }
-
-
     @Override
     public void add(Object item, int index) {
-
+        checkIndex(index);
+        if(size == arr.length) {
+            increaseBuffer();
+        }
+        for(int i = size - 1; i>=index; i--) {
+            arr[i+1] = arr[i];
+        }
+        arr[index] = (T) item;
+        size++;
     }
 
     @Override
@@ -65,7 +65,8 @@ public class MyArrayList<T> implements MyList {
 
     @Override
     public Object get(int index) {
-        return null;
+        checkIndex(index);
+        return arr[index];
     }
 
     @Override
