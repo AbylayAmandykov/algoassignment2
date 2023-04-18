@@ -8,7 +8,7 @@ public class MyArrayList<T> implements MyList {
     }
 
     public void increaseBuffer() {
-        T[] newArr = (T[]) new Object[arr.length + 5];
+        T[] newArr = (T[]) new Object[arr.length + 4];
         for (int i = 0; i < arr.length; i++) {
             newArr[i] = arr[i];
         }
@@ -50,12 +50,23 @@ public class MyArrayList<T> implements MyList {
 
     @Override
     public boolean remove(Object item) {
+        int index = indexOf(item);
+        if(index>=0) {
+            remove(index);
+            return true;
+        }
         return false;
     }
 
     @Override
     public Object remove(int index) {
-        return null;
+        checkIndex(index);
+        T temp = this.arr[index];
+        for (int i = index + 1; i < size; i++) {
+            arr[i - 1] = arr[i];
+        }
+        this.size--;
+        return temp;
     }
 
     public void clear() {
@@ -71,28 +82,30 @@ public class MyArrayList<T> implements MyList {
 
     @Override
     public int indexOf(Object o) {
-        return 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i].equals((T) o)) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     @Override
     public int lastIndexOf(Object o) {
-        return 0;
+        for (int i = arr.length - 1; i >= 0; i--) {
+            if (arr[i].equals((T) o)) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     @Override
     public void sort() {
 
     }
-
-    public void delete(int index) {
-        checkIndex(index);
-        for (int i = index + 1; i < size; i++) {
-            arr[i - 1] = arr[i];
-        }
-        size--;
-    }
     public void checkIndex(int index) {
-        if (index < 0 || index >= size) {
+        if (index < 0 || index > size) {
             throw new IndexOutOfBoundsException();
         }
 
