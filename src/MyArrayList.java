@@ -31,6 +31,12 @@ public class MyArrayList<T> {
         }
         size--;
     }
+    public void add(T element) {
+        if(size == arr.length) {
+            increaseBuffer();
+        }
+        arr[size++] = element;
+    }
     public void checkIndex(int index){
         if(index < 0 || index>=size){
             throw new IndexOutOfBoundsException();
