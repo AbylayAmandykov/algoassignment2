@@ -49,7 +49,9 @@ public class MyLinkedList<E> implements MyList {
 
     @Override
     public void clear() {
-
+        this.head = null;
+        this.tail = null;
+        size = 0;
     }
 
     @Override
@@ -70,5 +72,10 @@ public class MyLinkedList<E> implements MyList {
     @Override
     public void sort() {
 
+    }
+    private void checkIndex(int index){
+        if(index < 0 || index>=size){
+            throw new IndexOutOfBoundsException();
+        }
     }
 }
