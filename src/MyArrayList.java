@@ -102,7 +102,15 @@ public class MyArrayList<T> implements MyList {
 
     @Override
     public void sort() {
-
+        for(int i = 0; i < size; i++) {
+            for (int j = i; j < size; j++) {
+                if ((int) arr[j] < (int) arr[i]) {
+                    T temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
     }
     public void checkIndex(int index) {
         if (index < 0 || index > size) {
