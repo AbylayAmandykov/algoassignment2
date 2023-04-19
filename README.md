@@ -51,7 +51,7 @@ public void increaseBuffer() {
 
 **Description:** Add object to array.
 
-**Explanation:** 
+**Explanation:** Adding the new element to the end of an array. If it is limit we call the our function increaseBuffer.
 
 **Solution:** 
 
@@ -69,7 +69,7 @@ public void increaseBuffer() {
 
 **Description:** Add object to array by index.
 
-**Explanation:** 
+**Explanation:** Adding the new element to the chosen index of an array. If it is limit we call the our function increaseBuffer.
 
 **Solution:** 
 
@@ -92,7 +92,7 @@ public void increaseBuffer() {
 
 **Description:** Remove object from an array.
 
-**Explanation:** 
+**Explanation:** Remove chosen object from an array.
 
 **Solution:** 
 
@@ -110,7 +110,7 @@ public void increaseBuffer() {
 
 **Description:**  Remove object from an array by index.
 
-**Explanation:** 
+**Explanation:** It removes the object by index and all elements in the array moves to the left to one space.
 
 **Solution:** 
 
@@ -129,20 +129,20 @@ public void increaseBuffer() {
 
 **Description:** Clear the array.
 
-**Explanation:**  
+**Explanation:** It clears the size of an array, deletes all elements. And create new array with the size 1.
 
 **Solution:** 
 
 ```
 public void clear() {
-        this.arr = (T[]) new Object[5];
+        this.arr = (T[]) new Object[1];
         this.size = 0;
     }
 ```
 
 **Description:** Get the index of object.
 
-**Explanation:** 
+**Explanation:** It returns the index of chosen object.
 
 **Solution:** 
 
@@ -156,7 +156,7 @@ public void clear() {
 
 **Description:** Find the first index of object.
 
-**Explanation:**  
+**Explanation:** It returns the index of the first occurrence of the chosen object in the array. Otherwise, it returns -1.
 
 **Solution:** 
 
@@ -173,7 +173,7 @@ public void clear() {
 ```
 **Description:** Find the last index of object.
 
-**Explanation:** 
+**Explanation:** It returns the index of the last occurrence of the chosen object in the array. Otherwise, it returns -1.
 
 **Solution:** 
 
@@ -191,7 +191,7 @@ public void clear() {
 
 **Description:** Sort the array.
 
-**Explanation:** 
+**Explanation:** It sorts the elements of array by ascending order by bubble sort.
 
 **Solution:** 
 
@@ -212,7 +212,7 @@ public void clear() {
 
 **Description:** Checking index for exception.
 
-**Explanation:** 
+**Explanation:** It checks if the index is valid for the array. If the index is less than 0 or greater than or equal to the size of the array, it throws an IndexOutOfBoundsException.
 
 **Solution:** 
 
@@ -226,7 +226,7 @@ public void checkIndex(int index) {
 
 **Description:** toString the array.
 
-**Explanation:** 
+**Explanation:** It returns a string representation of the array.
 
 **Solution:** 
 
