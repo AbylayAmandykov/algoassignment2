@@ -35,7 +35,7 @@ public void increaseBuffer() {
 
 **Description:** Check the object
 
-**Explanation:** By 
+**Explanation:** By loop ``for each`` it checks each element in array, if our chosen object in array it returns True. Otherwise, it returns False.
 
 **Solution:** 
 
