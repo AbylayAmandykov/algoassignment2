@@ -96,7 +96,7 @@ public class MyArrayList<T> implements MyList {
           @return void
     */
     public void clear() {
-        this.arr = (T[]) new Object[5];
+        this.arr = (T[]) new Object[1];
         this.size = 0;
     }
     /*
