@@ -3,7 +3,7 @@ Here you can find explanations of all functions that I used to solve these probl
 
 *ArrayList*
 
-**Description:** Increase the buffer of an array
+**Description:** Increase the buffer of an array.
 
 **Explanation:** It creates a new array by adding + 1 to size of the old one and replace it by copying its elements.
 
@@ -19,7 +19,7 @@ public void increaseBuffer() {
     }
 ```
 
-**Description:** Get size of an array
+**Description:** Get size of an array.
 
 **Explanation:** Retrurning the number of elements of an array.
 
@@ -33,7 +33,7 @@ public void increaseBuffer() {
 ```
 
 
-**Description:** Check the object
+**Description:** Check the object.
 
 **Explanation:** By loop ``for each`` it checks each element in array, if our chosen object in array it returns True. Otherwise, it returns False.
 
@@ -49,7 +49,7 @@ public void increaseBuffer() {
     }
 ```
 
-**Description:** add object to array
+**Description:** Add object to array.
 
 **Explanation:** 
 
@@ -67,7 +67,7 @@ public void increaseBuffer() {
 
 **add** 
 
-**Description:** add object to array by index
+**Description:** Add object to array by index.
 
 **Explanation:** 
 
@@ -90,7 +90,7 @@ public void increaseBuffer() {
 ```
 
 
-**Description:** remove object from an array
+**Description:** Remove object from an array.
 
 **Explanation:** 
 
@@ -108,7 +108,7 @@ public void increaseBuffer() {
     }
 ```
 
-**Description:**  remove object from an array by index
+**Description:**  Remove object from an array by index.
 
 **Explanation:** 
 
@@ -127,7 +127,7 @@ public void increaseBuffer() {
     }
 ```
 
-**Description:** clear the array
+**Description:** Clear the array.
 
 **Explanation:**  
 
@@ -140,7 +140,7 @@ public void clear() {
     }
 ```
 
-**Description:** get the index of object
+**Description:** Get the index of object.
 
 **Explanation:** 
 
@@ -154,7 +154,7 @@ public void clear() {
     }
 ```
 
-**Description:** find the first index of object
+**Description:** Find the first index of object.
 
 **Explanation:**  
 
@@ -171,7 +171,7 @@ public void clear() {
         return -1;
     }
 ```
-**Description:** find the last index of object
+**Description:** Find the last index of object.
 
 **Explanation:** 
 
@@ -189,7 +189,7 @@ public void clear() {
     }
 ```
 
-**Description:** sort the array
+**Description:** Sort the array.
 
 **Explanation:** 
 
@@ -210,7 +210,7 @@ public void clear() {
     }
 ```
 
-**Description:** checking index for exception
+**Description:** Checking index for exception.
 
 **Explanation:** 
 
@@ -224,7 +224,7 @@ public void checkIndex(int index) {
     }
 ```
 
-**Description:** toString the array
+**Description:** toString the array.
 
 **Explanation:** 
 
