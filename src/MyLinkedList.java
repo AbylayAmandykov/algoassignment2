@@ -1,7 +1,25 @@
-public class MyLinkedList implements MyList {
+public class MyLinkedList<E> implements MyList {
+    private MyArrayList arrayList = new MyArrayList<E>();
+    private class Node<E> {
+        E val;
+        Node previous;
+        Node next;
+
+        public Node(E v) {
+            val = v;
+            previous = null;
+            next = null;
+        }
+    }
+    private Node<E> head;
+    private Node<E> tail;
+    private int size;
+    MyLinkedList() {
+        size = 0;
+    }
     @Override
     public int size() {
-        return 0;
+        return this.size;
     }
 
     @Override
