@@ -1,14 +1,16 @@
+import java.util.Arrays;
+
 public class MyArrayList<T> implements MyList {
     private T[] arr;
     private int size = 0;
 
     MyArrayList() {
-        this.arr = (T[]) new Object[5];
+        this.arr = (T[]) new Object[0];
         this.size = 0;
     }
 
     public void increaseBuffer() {
-        T[] newArr = (T[]) new Object[arr.length + 4];
+        T[] newArr = (T[]) new Object[arr.length + 1];
         for (int i = 0; i < arr.length; i++) {
             newArr[i] = arr[i];
         }
@@ -116,6 +118,10 @@ public class MyArrayList<T> implements MyList {
         if (index < 0 || index > size) {
             throw new IndexOutOfBoundsException();
         }
+    }
+    @Override
+    public String toString() {
+        return Arrays.toString(arr);
 
     }
 }
