@@ -17,7 +17,7 @@ public void increaseBuffer() {
         }
         arr = newArr;
     }
-```java
+```
 
 **Description:** Get size of an array.
 
