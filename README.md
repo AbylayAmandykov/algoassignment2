@@ -1,7 +1,7 @@
 # Documentation of the second assignment
 Here you can find explanations of all functions that I used to solve these problems.
 
-*ArrayList*
+***ArrayList***
 
 **Description:** Increase the buffer of an array.
 
@@ -138,9 +138,9 @@ public void clear() {
     }
 ```
 
-**Description:** Get the index of object.
+**Description:** Get the object by index.
 
-**Explanation:** It returns the index of chosen object.
+**Explanation:** It returns the object of chosen index.
 
 **Solution:** 
 
@@ -236,3 +236,320 @@ public void checkIndex(int index) {
 
     }
 ```
+
+***LinkedList***
+
+**Description:** Get size of a LinkedList.
+
+**Explanation:** Retrurning the number of elements of list.
+
+**Solution:** 
+
+```java
+@Override
+    public int size() {
+        return this.size;
+    }
+```
+
+
+**Description:** Check the object in LinkedList.
+
+**Explanation:** It checks each element in array, if our chosen object in list it returns True. Otherwise, it returns False.
+
+**Solution:** 
+
+```java
+@Override
+    public boolean contains(Object o) {
+        Node<E> current = head;
+        while (current != null) {
+            if (current.value.equals(o)) {
+                return true;
+            }
+            current = current.next;
+        }
+        return false;
+    }
+```
+
+**Description:** Add object to the LinkedList.
+
+**Explanation:** Adding the new element to the end of the list. 
+
+**Solution:** 
+
+```java
+@Override
+    public void add(Object item) {
+        Node newNode = new Node(item, null, tail);
+        if (tail != null) {
+            tail.next = newNode;
+        } else {
+            head = newNode;
+        }
+        tail = newNode;
+        size++;
+    }
+```
+
+**Description:** Add object to the LinkedList by index.
+
+**Explanation:** Adding the new element to the chosen index of list. 
+
+**Solution:** 
+
+```java
+@Override
+    public void add(Object item, int index) {
+        checkIndex(index);
+        if (index == size) {
+            add(item);
+        } else {
+            Node currentNode;
+            if (index < size / 2) {
+                currentNode = head;
+                for (int i = 0; i < index; i++) {
+                    currentNode = currentNode.next;
+                }
+            } else {
+                currentNode = tail;
+                for (int i = size - 1; i > index; i--) {
+                    currentNode = currentNode.previous;
+                }
+            }
+            Node previousNode = currentNode.previous;
+            Node newNode = new Node(item, currentNode, previousNode);
+            currentNode.previous = newNode;
+            if (previousNode != null) {
+                previousNode.next = newNode;
+            } else {
+                head = newNode;
+            }
+            size++;
+        }
+```
+
+
+**Description:** Remove object from the LinkedList.
+
+**Explanation:** Remove chosen object from the list. If there is a such element it returns True, otherwise False.
+
+**Solution:** 
+
+```java
+@Override
+    public boolean remove(Object item) {
+        Node currentNode = head;
+        while (currentNode != null && !currentNode.value.equals(item)) {
+            currentNode = currentNode.next;
+        }
+        if (currentNode != null) {
+            if (currentNode == head) {
+                head = currentNode.next;
+                if (head != null) {
+                    head.previous = null;
+                }
+            } else if (currentNode == tail) {
+                tail = currentNode.previous;
+                if (tail != null) {
+                    tail.next = null;
+                }
+            } else {
+                currentNode.previous.next = currentNode.next;
+                currentNode.next.previous = currentNode.previous;
+            }
+            size--;
+            return true;
+        }
+        return false;
+```
+
+**Description:**  Remove object from the LinkedList by index.
+
+**Explanation:** It removes the object by index from the list.
+
+**Solution:** 
+
+```java
+@Override
+    public Object remove(int index) {
+        checkIndex(index);
+        Node curNode;
+        if (index < size / 2) {
+            curNode = head;
+            for (int i = 0; i < index; i++) {
+                curNode = curNode.next;
+            }
+        } else {
+            curNode = tail;
+            for (int i = size - 1; i > index; i--) {
+                curNode = curNode.previous;
+            }
+        }
+        Node prevNode = curNode.previous;
+        Node nextNode = curNode.next;
+        if (prevNode != null) {
+            prevNode.next = nextNode;
+        } else {
+            head = nextNode;
+        }
+        if (nextNode != null) {
+            nextNode.previous = prevNode;
+        } else {
+            tail = prevNode;
+        }
+        size--;
+        return curNode.value; // returning object
+    }
+```
+
+**Description:** Clear the LinkedList.
+
+**Explanation:** It clears the size of the list, deletes all elements. 
+
+**Solution:** 
+
+```java
+@Override
+public void clear() {
+   this.head = null;
+   this.tail = null;
+   size = 0;
+}
+```
+
+**Description:** Get the object by index.
+
+**Explanation:** It returns the object of chosen index.
+
+**Solution:** 
+
+```java
+@Override
+public Object get(int index) {
+    checkIndex(index);
+     Node currentNode;
+        if (index < size / 2) {
+            currentNode = head;
+            for (int i = 0; i < index; i++) {
+                currentNode = currentNode.next;
+            }
+        } else {
+            currentNode = tail;
+            for (int i = size - 1; i > index; i--) {
+                currentNode = currentNode.previous;
+            }
+        }
+        return currentNode.value;
+    }
+```
+
+**Description:** Find the first index of object.
+
+**Explanation:** It returns the index of the first occurrence of the chosen object in the list. Otherwise, it returns -1.
+
+**Solution:** 
+
+```java
+@Override
+public int indexOf(Object o) {
+        Node curNode = head;
+        int index = 0;
+        while (curNode != null) {
+            if (curNode.value.equals(o)) {
+                return index;
+            }
+            curNode = curNode.next;
+            index++;
+        }
+        return -1;
+    }
+```
+**Description:** Find the last index of object.
+
+**Explanation:** It returns the index of the last occurrence of the chosen object in the list. Otherwise, it returns -1.
+
+**Solution:** 
+
+```java
+public int lastIndexOf(Object o) {
+   Node curNode = tail;
+   int index = size - 1;
+   while (curNode != null) {
+     if (curNode.value.equals(o)) {
+       return index;
+            }
+   curNode = curNode.previous;
+            index--;
+        }
+        return -1;
+    }
+```
+
+**Description:** Sort the LinkedList.
+
+**Explanation:** It sorts the elements of list by ascending order with bubble sort.
+
+**Solution:** 
+
+```java
+@Override
+public void sort() {
+        if (size < 2) { // base case
+            return;
+        }
+        Node current = head;
+        while (current != null) {
+            Node min = current;
+            Node innerCurrent = current.next;
+            while (innerCurrent != null) {
+                if (((Comparable) innerCurrent.value).compareTo(min.value) < 0) {
+                    min = innerCurrent;
+                }
+                innerCurrent = innerCurrent.next;
+            }
+
+            if (min != current) {
+                Object temp = current.value;
+                current.value = min.value;
+                min.value = temp;
+            }
+            current = current.next;
+        }
+    }
+```
+
+**Description:** Checking index for exception.
+
+**Explanation:** It checks if the index is valid for the LinkedList. If the index is less than 0 or greater than or equal to the size of the list, it throws an IndexOutOfBoundsException.
+
+**Solution:** 
+
+```java
+public void checkIndex(int index) {
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException();
+        }
+    }
+```
+
+**Description:** toString the array.
+
+**Explanation:** It returns a string representation of the LinkedList.
+
+**Solution:** 
+
+
+```java
+public String toString() {
+        String out = "[";
+        Node<E> nextNode = this.head;
+        while (nextNode != null) {
+            out += nextNode.value + " ";
+            nextNode = nextNode.next;
+        }
+        return out + "]";
+    }
+```
+
