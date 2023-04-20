@@ -9,7 +9,7 @@ Here you can find explanations of all functions that I used to solve these probl
 
 **Solution:** 
 
-```
+```java
 public void increaseBuffer() {
         T[] newArr = (T[]) new Object[arr.length + 1];
         for (int i = 0; i < arr.length; i++) {
@@ -17,7 +17,7 @@ public void increaseBuffer() {
         }
         arr = newArr;
     }
-```
+```java
 
 **Description:** Get size of an array.
 
@@ -25,7 +25,7 @@ public void increaseBuffer() {
 
 **Solution:** 
 
-```
+```java
 @Override
     public int size() {
         return this.size;
@@ -39,7 +39,7 @@ public void increaseBuffer() {
 
 **Solution:** 
 
-```
+```java
 @Override
     public boolean contains(Object o) {
         for(T element : arr) {
@@ -55,7 +55,7 @@ public void increaseBuffer() {
 
 **Solution:** 
 
-```
+```java
 @Override
    public void add(Object item) {
         if(size == arr.length) {
@@ -65,15 +65,13 @@ public void increaseBuffer() {
     }
 ```
 
-**add** 
-
 **Description:** Add object to array by index.
 
 **Explanation:** Adding the new element to the chosen index of an array. If it is limit we call the our function increaseBuffer.
 
 **Solution:** 
 
-```
+```java
 @Override
     public void add(Object item, int index) { // index - that index where we need to put our new object
         checkIndex(index);
@@ -96,7 +94,7 @@ public void increaseBuffer() {
 
 **Solution:** 
 
-```
+```java
 @Override
     public boolean remove(Object item) {
         int index = indexOf(item);
@@ -114,7 +112,7 @@ public void increaseBuffer() {
 
 **Solution:** 
 
-```
+```java
 @Override
     public Object remove(int index) { // index - our removing index
         checkIndex(index);
@@ -133,7 +131,7 @@ public void increaseBuffer() {
 
 **Solution:** 
 
-```
+```java
 public void clear() {
         this.arr = (T[]) new Object[1];
         this.size = 0;
@@ -146,7 +144,7 @@ public void clear() {
 
 **Solution:** 
 
-```
+```java
 @Override
     public Object get(int index) {
         checkIndex(index);
@@ -160,7 +158,7 @@ public void clear() {
 
 **Solution:** 
 
-```
+```java
 @Override
     public int indexOf(Object o) {
         for (int i = 0; i < arr.length; i++) {
@@ -177,7 +175,7 @@ public void clear() {
 
 **Solution:** 
 
-```
+```java
 @Override
     public int lastIndexOf(Object o) {
         for (int i = arr.length - 1; i >= 0; i--) {
@@ -195,7 +193,7 @@ public void clear() {
 
 **Solution:** 
 
-```
+```java
 @Override
     public void sort() {
         for(int i = 0; i < size; i++) {
@@ -216,7 +214,7 @@ public void clear() {
 
 **Solution:** 
 
-```
+```java
 public void checkIndex(int index) {
         if (index < 0 || index > size) {
             throw new IndexOutOfBoundsException();
@@ -231,7 +229,7 @@ public void checkIndex(int index) {
 **Solution:** 
 
 
-```
+```java
 @Override
     public String toString() {
         return Arrays.toString(arr);
