@@ -138,9 +138,9 @@ public void clear() {
     }
 ```
 
-**Description:** Get the index of object.
+**Description:** Get the object by index.
 
-**Explanation:** It returns the index of chosen object.
+**Explanation:** It returns the object of chosen index.
 
 **Solution:** 
 
@@ -419,9 +419,9 @@ public void clear() {
 }
 ```
 
-**Description:** Get the index of object.
+**Description:** Get the object by index.
 
-**Explanation:** It returns the index of chosen object.
+**Explanation:** It returns the object of chosen index.
 
 **Solution:** 
 
