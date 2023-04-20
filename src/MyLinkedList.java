@@ -1,14 +1,13 @@
 public class MyLinkedList<E> implements MyList {
-    private MyArrayList arrayList = new MyArrayList<E>();
     private class Node<E> {
-        E val;
-        Node previous;
-        Node next;
+        E value;
+        Node<E> previous;
+        Node<E> next;
 
-        public Node(E v) {
-            val = v;
-            previous = null;
-            next = null;
+        public Node(E v, Node next, Node previous) {
+            this.value = v;
+            this.previous = previous;
+            this.next = next;
         }
     }
     private Node<E> head;
@@ -29,14 +28,45 @@ public class MyLinkedList<E> implements MyList {
 
     @Override
     public void add(Object item) {
-
+        Node newNode = new Node(item, null, tail);
+        if (tail != null) {
+            tail.next = newNode;
+        } else {
+            head = newNode;
+        }
+        tail = newNode;
+        size++;
     }
 
     @Override
     public void add(Object item, int index) {
-
+        checkIndex(index);
+        if (index == size) {
+            add(item);
+        } else {
+            Node currentNode;
+            if (index < size / 2) {
+                currentNode = head;
+                for (int i = 0; i < index; i++) {
+                    currentNode = currentNode.next;
+                }
+            } else {
+                currentNode = tail;
+                for (int i = size - 1; i > index; i--) {
+                    currentNode = currentNode.previous;
+                }
+            }
+            Node previousNode = currentNode.previous;
+            Node newNode = new Node(item, currentNode, previousNode);
+            currentNode.previous = newNode;
+            if (previousNode != null) {
+                previousNode.next = newNode;
+            } else {
+                head = newNode;
+            }
+            size++;
+        }
     }
-
     @Override
     public boolean remove(Object item) {
         return false;
@@ -77,5 +107,14 @@ public class MyLinkedList<E> implements MyList {
         if(index < 0 || index>=size){
             throw new IndexOutOfBoundsException();
         }
+    }
+    public String toString() {
+        String out = "[";
+        Node<E> nextNode = this.head;
+        while (nextNode != null) {
+            out += nextNode.value + " ";
+            nextNode = nextNode.next;
+        }
+        return out + "]";
     }
 }
