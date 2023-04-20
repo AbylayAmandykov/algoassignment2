@@ -16,11 +16,18 @@ public class MyLinkedList<E> implements MyList {
     MyLinkedList() {
         size = 0;
     }
+    /*
+          function returns the size of LinkedList
+          @return int size
+    */
     @Override
     public int size() {
         return this.size;
     }
-
+    /*
+       contains - checking the element in LinkedList
+       @return boolean
+    */
     @Override
     public boolean contains(Object o) {
         Node<E> current = head;
@@ -32,7 +39,10 @@ public class MyLinkedList<E> implements MyList {
         }
         return false;
     }
-
+    /*
+           add - adding new object to LinkedList
+           @return void
+    */
     @Override
     public void add(Object item) {
         Node newNode = new Node(item, null, tail);
@@ -44,6 +54,10 @@ public class MyLinkedList<E> implements MyList {
         tail = newNode;
         size++;
     }
+    /*
+       add - adding new object to LinkedList by index
+       @return void
+    */
     @Override
     public void add(Object item, int index) {
         checkIndex(index);
@@ -72,6 +86,10 @@ public class MyLinkedList<E> implements MyList {
             }
             size++;
         }
+        /*
+           remove - delete, remove the object from LinkedList
+           @return boolean
+    */
     }
     public boolean remove(Object item) {
         Node currentNode = head;
@@ -98,7 +116,7 @@ public class MyLinkedList<E> implements MyList {
         }
         return false;
     }
-
+    //remove - delete, remove the object from the LinkedList by index
     @Override
     public Object remove(int index) {
         checkIndex(index);
@@ -127,16 +145,22 @@ public class MyLinkedList<E> implements MyList {
             tail = prevNode;
         }
         size--;
-        return curNode.value;
+        return curNode.value; // returning object
     }
-
+    /*
+              function clear the LinkedList
+              @return void
+    */
     @Override
     public void clear() {
         this.head = null;
         this.tail = null;
         size = 0;
     }
-
+    /*
+              get - getting the index of an object from LinkedList
+              @return object
+    */
     @Override
     public Object get(int index) {
         checkIndex(index);
@@ -154,7 +178,10 @@ public class MyLinkedList<E> implements MyList {
         }
         return currentNode.value;
     }
-
+    /*
+          indexOf - returns the index of the first entry of the object in LinkedList
+          @return int
+    */
     @Override
     public int indexOf(Object o) {
         Node curNode = head;
@@ -168,7 +195,10 @@ public class MyLinkedList<E> implements MyList {
         }
         return -1;
     }
-
+     /*
+          lastIndexOf - returns the index of the last entry of the object in LinkedList
+          @return int
+    */
     @Override
     public int lastIndexOf(Object o) {
         Node curNode = tail;
@@ -182,9 +212,13 @@ public class MyLinkedList<E> implements MyList {
         }
         return -1;
     }
+    /*
+         sort - sorting the LinkedList by bubble sort
+         @return int
+   */
     @Override
     public void sort() {
-        if (size < 2) {
+        if (size < 2) { // base case
             return;
         }
         Node current = head;
@@ -206,11 +240,19 @@ public class MyLinkedList<E> implements MyList {
             current = current.next;
         }
     }
+    /*
+        checkIndex - checking for exception the index
+        @return void
+  */
     private void checkIndex(int index){
         if(index < 0 || index>=size){
             throw new IndexOutOfBoundsException();
         }
     }
+    /*
+         toString - returns a string representation of the LinkedList
+         @return String
+   */
     public String toString() {
         String out = "[";
         Node<E> nextNode = this.head;
