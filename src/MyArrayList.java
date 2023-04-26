@@ -5,15 +5,28 @@ public class MyArrayList<T> implements MyList {
     private int size = 0;
     // constructor
     MyArrayList() {
-        this.arr = (T[]) new Object[0];
+        this.arr = (T[]) new Object[1];
         this.size = 0;
     }
      /*
        increaseBuffer - increasing the buffer of an array
        @return void
     */
+    public void addAllElements(Object newArr[], int index) {
+        checkIndex(index);
+        if(size == arr.length) {
+            increaseBuffer();
+        }
+        for(int i = size - 1; i>=index; i--) {
+            arr[i+ newArr.length] = arr[i];
+        }
+        for(int i = 0; i< newArr.length; i++) {
+            arr[index + i+ 1] = (T) newArr[i];
+        }
+        size+= newArr.length;
+    }
     public void increaseBuffer() {
-        T[] newArr = (T[]) new Object[arr.length + 1];
+        T[] newArr = (T[]) new Object[arr.length *2];
         for (int i = 0; i < arr.length; i++) {
             newArr[i] = arr[i];
         }

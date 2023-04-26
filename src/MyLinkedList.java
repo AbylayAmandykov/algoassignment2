@@ -58,6 +58,13 @@ public class MyLinkedList<E> implements MyList {
        add - adding new object to LinkedList by index
        @return void
     */
+//    public void allALlElements(Object list, int index) {
+//        checkIndex(index);
+//        if(index == size) {
+//            add(list);
+//        }
+//        else
+//    }
     @Override
     public void add(Object item, int index) {
         checkIndex(index);
