@@ -1,21 +1,20 @@
 import java.util.EmptyStackException;
 
 public class MyArrayListStack<T> {
-    MyArrayList arrayList = new MyArrayList();
     private MyArrayList<T> arr;
     public MyArrayListStack() {
         arr = new MyArrayList<>();
     }
     public void push(T element) {
-        arrayList.add(element);
+        arr.add(element);
     }
     public T pop() {
         isEmptyThrowException();
-        return (T) arrayList.remove(arr.size()-1);
+        return (T) arr.remove(arr.size()-1);
     }
     public T peek() {
         isEmptyThrowException();
-        return (T) arrayList.remove(arr.size()-1);
+        return (T) arr.get(arr.size()-1);
     }
     public boolean isEmpty() {
         return arr.size() == 0;
