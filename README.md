@@ -80,6 +80,84 @@ public boolean isEmpty() {
     }
 ```
 
+## MyLinkedListStack
+
+### push
+
+**Description:** adds an element to the top of the stack using the add method
+
+**Solution:** 
+
+```java
+ public void push(T element) {
+    top.add(element);
+ }
+```
+
+### pop
+
+**Description:** removes and returns the top element of the stack using the remove method 
+
+**Solution:** 
+
+```java
+ public T pop() {
+    isEmptyThrowException();
+    return (T) top.remove(top.size()-1); 
+ }
+```
+
+### peek
+
+**Description:**  returns the top element of the stack without removing it using the get method
+
+**Solution:** 
+
+```java
+public T peek() {
+   isEmptyThrowException();
+   return (T) top.get(top.size()-1);
+}
+```
+
+### isEmpty
+
+**Description:** returns true if the stack is empty or false if it is not using the isEmpty method
+
+**Solution:** 
+
+```java
+public boolean isEmpty() {
+     return top.size() == 0;
+    }
+```
+
+### size
+
+**Description:** returns the number of elements in the stack using the size method
+
+**Solution:** 
+
+```java
+ public int size() {
+        return top.size();
+    }
+```
+
+### isEmptyThrowException
+
+**Description:** throwing an exception if stack is empty
+
+**Solution:** 
+
+```java
+ public void isEmptyThrowException() {
+        if(isEmpty()) {
+            throw new EmptyStackException();
+        }
+    }
+```
+
 ***ArrayList***
 
 **Description:** Increase the buffer of an array.
