@@ -3,6 +3,9 @@ public class Main {
     public static void main(String[] args) throws NoSuchFieldException {
         Scanner sc = new Scanner(System.in);
         MyArrayListStack<Integer> arrayListStack = new MyArrayListStack();
+        MyLinkedListStack<Integer> linkedListStack = new MyLinkedListStack();
+        MyArrayListQueue<Integer> arrayListQueue = new MyArrayListQueue();
+        MyLinkedListQueue<Integer> linkedListQueue = new MyLinkedListQueue();
         System.out.println("Stack for ArrayList:");
         System.out.println("Is empty? " + arrayListStack.isEmpty());
         arrayListStack.push(5);
@@ -13,7 +16,6 @@ public class Main {
         System.out.println("Removed element: " + arrayListStack.pop());
         System.out.println("Top element: " + arrayListStack.peek());
         System.out.println();
-        MyLinkedListStack<Integer> linkedListStack = new MyLinkedListStack();
         System.out.println("Stack for LinkedList:");
         System.out.println("Is empty? " + linkedListStack.isEmpty());
         linkedListStack.push(7);
@@ -24,7 +26,6 @@ public class Main {
         System.out.println("Removed element: " + linkedListStack.pop());
         System.out.println("Top element: " + linkedListStack.peek());
         System.out.println();
-        MyArrayListQueue<Integer> arrayListQueue = new MyArrayListQueue();
         System.out.println("Queue for ArrayList:");
         System.out.println("Is empty? " + arrayListQueue.isEmpty());
         arrayListQueue.enqueue(5);
@@ -35,6 +36,14 @@ public class Main {
         System.out.println("Size: " + arrayListQueue.size());
         System.out.println("Front element: " + arrayListQueue.peek());
         System.out.println();
-
+        System.out.println("Queue for LinkedList:");
+        System.out.println("Is empty? " + linkedListQueue.isEmpty());
+        linkedListQueue.enqueue(5);
+        linkedListQueue.enqueue(3);
+        linkedListQueue.enqueue(19);
+        System.out.println("Removed element: " + linkedListQueue.dequeue());
+        System.out.println("Is empty? " + linkedListQueue.isEmpty());
+        System.out.println("Size: " + linkedListQueue.size());
+        System.out.println("Front element: " + linkedListQueue.peek());
     }
 }
