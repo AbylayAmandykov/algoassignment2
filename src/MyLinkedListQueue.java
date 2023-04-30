@@ -10,6 +10,10 @@ public class MyLinkedListQueue<T> {
         isEmptyThrowException();
         return (T) front.remove(0);
     }
+    public T peek() throws NoSuchFieldException {
+        isEmptyThrowException();
+        return (T) front.get(0);
+    }
     public boolean isEmpty() {
         return front.size() == 0;
     }
