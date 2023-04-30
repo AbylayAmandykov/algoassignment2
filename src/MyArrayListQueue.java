@@ -6,4 +6,7 @@ public class MyArrayListQueue<T> {
     public void enqueue(T element) {
         arr.add(element);
     }
+    public boolean isEmpty() {
+        return arr.size() == 0;
+    }
 }
