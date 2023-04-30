@@ -1,5 +1,3 @@
-import java.util.EmptyStackException;
-
 public class MyArrayListQueue<T> {
     private MyArrayList<T> arr;
     public MyArrayListQueue() {
