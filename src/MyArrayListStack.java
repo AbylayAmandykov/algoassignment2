@@ -16,6 +16,9 @@ public class MyArrayListStack<T> {
     public boolean isEmpty() {
         return arr.size() == 0;
     }
+    public int size() {
+        return arr.size();
+    }
 
 
 }
