@@ -12,6 +12,10 @@ public class MyArrayListQueue<T> {
         isEmptyThrowException();
         return (T) arr.remove(0);
     }
+    public T peek() throws NoSuchFieldException {
+        isEmptyThrowException();
+        return (T) arr.get(0);
+    }
     public boolean isEmpty() {
         return arr.size() == 0;
     }
