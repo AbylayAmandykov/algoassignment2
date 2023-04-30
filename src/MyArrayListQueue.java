@@ -8,6 +8,10 @@ public class MyArrayListQueue<T> {
     public void enqueue(T element) {
         arr.add(element);
     }
+    public T dequeue() throws NoSuchFieldException {
+        isEmptyThrowException();
+        return (T) arr.remove(0);
+    }
     public boolean isEmpty() {
         return arr.size() == 0;
     }
