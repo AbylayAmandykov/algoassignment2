@@ -10,6 +10,9 @@ public class MyArrayListStack<T> {
     public T pop() {
         return (T) arrayList.remove(arr.size()-1);
     }
+    public T peek() {
+        return (T) arrayList.remove(arr.size()-1);
+    }
     public boolean isEmpty() {
         return arr.size() == 0;
     }
