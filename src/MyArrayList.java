@@ -5,7 +5,7 @@ public class MyArrayList<T> implements MyList {
     private int size = 0;
     // constructor
     MyArrayList() {
-        this.arr = (T[]) new Object[1];
+        this.arr = (T[]) new Object[0];
         this.size = 0;
     }
      /*
@@ -14,9 +14,11 @@ public class MyArrayList<T> implements MyList {
     */
     public void addAllElements(Object newArr[], int index) {
         checkIndex(index);
-        if(size == arr.length) {
-            increaseBuffer();
+        T[] newArray = (T[]) new Object[arr.length +index];
+        for (int i = 0; i < arr.length; i++) {
+            newArray[i] = arr[i];
         }
+        arr = newArray;
         for(int i = size - 1; i>=index; i--) {
             arr[i+ newArr.length] = arr[i];
         }
@@ -26,7 +28,7 @@ public class MyArrayList<T> implements MyList {
         size+= newArr.length;
     }
     public void increaseBuffer() {
-        T[] newArr = (T[]) new Object[arr.length *2];
+        T[] newArr = (T[]) new Object[arr.length +1];
         for (int i = 0; i < arr.length; i++) {
             newArr[i] = arr[i];
         }
