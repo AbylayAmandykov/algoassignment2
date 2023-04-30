@@ -1,3 +1,5 @@
+import java.util.EmptyStackException;
+
 public class MyArrayListStack<T> {
     MyArrayList arrayList = new MyArrayList();
     private MyArrayList<T> arr;
@@ -19,6 +21,9 @@ public class MyArrayListStack<T> {
     public int size() {
         return arr.size();
     }
-
-
+    public void isEmptyThrowException() {
+        if(isEmpty()) {
+            throw new EmptyStackException();
+        }
+    }
 }
