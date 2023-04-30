@@ -10,9 +10,11 @@ public class MyArrayListStack<T> {
         arrayList.add(element);
     }
     public T pop() {
+        isEmptyThrowException();
         return (T) arrayList.remove(arr.size()-1);
     }
     public T peek() {
+        isEmptyThrowException();
         return (T) arrayList.remove(arr.size()-1);
     }
     public boolean isEmpty() {
