@@ -1,5 +1,84 @@
-# Documentation of the second assignment
+# Documentation 
+
 Here you can find explanations of all functions that I used to solve these problems.
+
+## MyArrayListStack
+
+### push
+
+**Description:** adds an element to the top of the stack using the add method
+
+**Solution:** 
+
+```java
+ public void push(T element) {
+    arr.add(element);
+ }
+```
+
+### pop
+
+**Description:** removes and returns the top element of the stack using the remove method 
+
+**Solution:** 
+
+```java
+ public T pop() {
+    isEmptyThrowException();
+    return (T) arr.remove(arr.size()-1); 
+ }
+```
+
+### peek
+
+**Description:**  returns the top element of the stack without removing it using the get method
+
+**Solution:** 
+
+```java
+public T peek() {
+   isEmptyThrowException();
+   return (T) arr.get(arr.size()-1);
+}
+```
+
+### isEmpty
+
+**Description:** returns true if the stack is empty or false if it is not using the isEmpty method
+
+**Solution:** 
+
+```java
+public boolean isEmpty() {
+     return arr.size() == 0;
+    }
+```
+
+### size
+
+**Description:** returns the number of elements in the stack using the size method
+
+**Solution:** 
+
+```java
+ public int size() {
+        return arr.size();
+    }
+```
+
+### isEmptyThrowException
+
+**Description:** throwing an exception if stack is empty
+
+**Solution:** 
+
+```java
+ public void isEmptyThrowException() {
+        if(isEmpty()) {
+            throw new EmptyStackException();
+        }
+    }
+```
 
 ***ArrayList***
 
