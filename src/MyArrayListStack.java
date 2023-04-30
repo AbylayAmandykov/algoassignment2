@@ -7,8 +7,12 @@ public class MyArrayListStack<T> {
     public void push(T element) {
         arrayList.add(element);
     }
+    public T pop() {
+        return (T) arrayList.remove(arr.size()-1);
+    }
     public boolean isEmpty() {
         return arr.size() == 0;
     }
+
 
 }
