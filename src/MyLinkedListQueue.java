@@ -6,6 +6,10 @@ public class MyLinkedListQueue<T> {
     public void enqueue(T element) {
         front.add(element);
     }
+    public T dequeue() throws NoSuchFieldException {
+        isEmptyThrowException();
+        return (T) front.remove(0);
+    }
     public boolean isEmpty() {
         return front.size() == 0;
     }
