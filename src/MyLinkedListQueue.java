@@ -6,5 +6,7 @@ public class MyLinkedListQueue<T> {
     public void enqueue(T element) {
         front.add(element);
     }
-
+    public boolean isEmpty() {
+        return front.size() == 0;
+    }
 }
