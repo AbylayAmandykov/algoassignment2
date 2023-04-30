@@ -1,6 +1,7 @@
 import java.util.EmptyStackException;
 public class MyArrayListStack<T> {
     private MyArrayList<T> arr;
+    //constructor
     public MyArrayListStack() {
         arr = new MyArrayList<>();
     }
