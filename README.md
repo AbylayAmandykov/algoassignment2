@@ -158,7 +158,85 @@ public boolean isEmpty() {
     }
 ```
 
-***ArrayList***
+## MyArrayListQueue
+
+### enqueue
+
+**Description:** adds an element to the back of the queue using the add method
+
+**Solution:** 
+
+```java
+ public void enqueue(T element) {
+    arr.add(element);
+ }
+```
+
+### dequeue
+
+**Description:** removes and returns the front element of the queue using the remove method
+
+**Solution:** 
+
+```java
+ public T dequeue() throws NoSuchFieldException {
+    isEmptyThrowException();
+    return (T) arr.remove(0); 
+ }
+```
+
+### peek
+
+**Description:**  returns the front element of the queue without removing it using the get method
+
+**Solution:** 
+
+```java
+public T peek() throws NoSuchFieldException {
+   isEmptyThrowException();
+   return (T) arr.get(0);
+}
+```
+
+### isEmpty
+
+**Description:** returns true if the queue is empty or false if it is not using the isEmpty method
+
+**Solution:** 
+
+```java
+public boolean isEmpty() {
+     return arr.size() == 0;
+    }
+```
+
+### size
+
+**Description:** returns the number of elements in the queue using the size method
+
+**Solution:** 
+
+```java
+ public int size() {
+        return arr.size();
+    }
+```
+
+### isEmptyThrowException
+
+**Description:** throwing an exception if queue is empty
+
+**Solution:** 
+
+```java
+ public void isEmptyThrowException() throws NoSuchFieldException {
+        if(isEmpty()) {
+            throw new NoSuchFieldException();
+        }
+    }
+```
+
+## ArrayList
 
 **Description:** Increase the buffer of an array.
 
@@ -394,7 +472,7 @@ public void checkIndex(int index) {
     }
 ```
 
-***LinkedList***
+## LinkedList
 
 **Description:** Get size of a LinkedList.
 
