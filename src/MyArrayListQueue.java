@@ -1,3 +1,5 @@
+import java.util.EmptyStackException;
+
 public class MyArrayListQueue<T> {
     private MyArrayList<T> arr;
     public MyArrayListQueue() {
@@ -11,5 +13,10 @@ public class MyArrayListQueue<T> {
     }
     public int size() {
         return arr.size();
+    }
+    private void isEmptyThrowException() throws NoSuchFieldException {
+        if (isEmpty()) {
+            throw new NoSuchFieldException();
+        }
     }
 }
